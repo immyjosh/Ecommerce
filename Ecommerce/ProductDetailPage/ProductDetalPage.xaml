@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:Ecommerce" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Ecommerce.ProductDetailPage">
+	<ContentPage.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ScrollView Grid.Row="0" Grid.ColumnSpan="2">
+                <StackLayout>
+                    <!--https://www.allenedmonds.com/on/demandware.static/-/Library-Sites-AllenEdmondsShared/default/dwec88ada2/images/customPages/model-shoe.png-->
+                    <Image x:Name="img1" Source="{Binding Prodimage1}" Aspect="Fill" WidthRequest="250" HeightRequest="250" />
+                    <StackLayout Orientation="Horizontal" x:Name="img" Margin="3,0,3,0">
+                        <StackLayout BackgroundColor="Blue" x:Name="selectimg1" Padding="1">
+                            <Image x:Name="prodImage1" Source="{Binding Prodimage1}" Aspect="Fill" WidthRequest="50" HeightRequest="50">
+                            </Image>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Handle_image1" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout x:Name="selectimg2" Padding="1">
+                            <Image x:Name="prodImage2" Source="{Binding Prodimage2}" Aspect="Fill" WidthRequest="50" HeightRequest="50">
+                            </Image>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Handle_image2" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout x:Name="selectimg3" Padding="1">
+                            <Image x:Name="prodImage3" Source="{Binding Prodimage3}" Aspect="Fill" WidthRequest="50" HeightRequest="50">
+                            </Image>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Handle_image3" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout x:Name="selectimg4" Padding="1">
+                            <Image x:Name="prodImage4" Source="{Binding Prodimage4}" Aspect="Fill" WidthRequest="50" HeightRequest="50">
+                            </Image>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Handle_image4" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <!--      Color Image              -->
+                        <StackLayout>
+                            <Label Text="Colors:" TextColor="Black" />
+                            <local:HorizontalScrollView Orientation="Horizontal" x:Name="colorpallet">
+                                <local:HorizontalScrollView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Margin="1,0,1,0">
+                                                <Image HorizontalOptions="Start" Source="{Binding colorpallet}" WidthRequest="30" HeightRequest="30" Aspect="Fill" />
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="Handle_Tapped" NumberOfTapsRequired="1" />
+                                                </StackLayout.GestureRecognizers>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </local:HorizontalScrollView.ItemTemplate>
+                            </local:HorizontalScrollView>
+                        </StackLayout>
+                        <!--     end color image               -->
+                    </StackLayout>
+                    <BoxView BackgroundColor="Gray" HeightRequest="5" />
+                    <!--      Color Pallet              -->
+                    <StackLayout x:Name="pallet" IsVisible="false">
+                        <local:HorizontalScrollView Orientation="Horizontal" x:Name="colordata">
+                            <local:HorizontalScrollView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout BackgroundColor="Gray" Margin="3,0,3,0" Padding="2">
+                                            <Image Source="{Binding formalshoe}" Aspect="Fill" WidthRequest="50" HeightRequest="50" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </local:HorizontalScrollView.ItemTemplate>
+                        </local:HorizontalScrollView>
+                        <BoxView BackgroundColor="Gray" HeightRequest="7" />
+                    </StackLayout>
+                    <!--      end Color Pallet              -->
+                    <Label FontSize="20" Text="Puma Black Shoes For men" TextColor="Black" />
+                    <Label FontSize="30" FontAttributes="Bold" Text="₹ 599" TextColor="Black" />
+                    <Label Text="Free Delivery in 2 Days" TextColor="Black" FontSize="15" />
+                    <BoxView BackgroundColor="Gray" HeightRequest="7" />
+                    <StackLayout>
+                        <Label Text="Details" FontSize="20" TextColor="Black" />
+                        <Label Text="Highlights" FontSize="17" FontAttributes="Bold" TextColor="Black" />
+                        <Label Text="Color:Black" TextColor="Black" />
+                        <Label Text="Outer Material:Leather" TextColor="Black" />
+                        <Label Text="Inner Material:Fabric" TextColor="Black" />
+                        <Label Text="Guarentee:2 years" TextColor="Black" />
+                        <Label Text="Just799 Assured" TextColor="Black" />
+                        <Label Text="Details" TextColor="Black" />
+                        <Label Text="Details" TextColor="Black" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout BackgroundColor="Gray" Grid.Row="1" Grid.Column="0">
+                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="Add to Cart" TextColor="White" />
+            </StackLayout>
+            <StackLayout BackgroundColor="Red" Grid.Row="1" Grid.Column="1">
+                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="Buy Now" TextColor="Black" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

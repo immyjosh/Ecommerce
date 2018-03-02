@@ -8,7 +8,7 @@ namespace Ecommerce
         {
             InitializeComponent();
 
-            MainPage = new EcommercePage();
+            MainPage = new ProductDetailPage();
         }
 
         protected override void OnStart()
