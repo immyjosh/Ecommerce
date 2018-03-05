@@ -34,6 +34,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductDetailPage\ProductBrown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -49,6 +53,9 @@
     <Compile Include="Controls\HorizontalScrollView.cs" />
     <Compile Include="ProductDetailPage\ProductModel\ProductColor.cs" />
     <Compile Include="ProductDetailPage\ProductModel\ProductImages.cs" />
+    <Compile Include="ProductDetailPage\ProductBrown.xaml.cs">
+      <DependentUpon>ProductBrown.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

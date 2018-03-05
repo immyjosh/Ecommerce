@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:Ecommerce" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Ecommerce.ProductDetailPage">
-    <ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Ecommerce" x:Class="Ecommerce.ProductBrown">
+	<ContentPage.Content>
         <Grid RowSpacing="0" ColumnSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -44,24 +44,7 @@
                             </StackLayout.GestureRecognizers>
                         </StackLayout>
                         <!--      Color Image              -->
-                        <!--<StackLayout>
-                            <Label Text="Available Colors:" TextColor="Black" />
-                            <local:HorizontalScrollView Orientation="Horizontal" x:Name="colorpallet">
-                                <local:HorizontalScrollView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout Margin="1,0,1,0">
-                                                <Image HorizontalOptions="Start" Source="{Binding colorpallet}" WidthRequest="30" HeightRequest="30" Aspect="Fill" />
-                                                <StackLayout.GestureRecognizers>
-                                                    <TapGestureRecognizer Tapped="Handle_Tapped" NumberOfTapsRequired="1" />
-                                                </StackLayout.GestureRecognizers>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </local:HorizontalScrollView.ItemTemplate>
-                            </local:HorizontalScrollView>
-                        </StackLayout>-->
-                         <StackLayout HorizontalOptions="CenterAndExpand">
+                       <StackLayout HorizontalOptions="CenterAndExpand">
                             <!-- <Label Text="Colors:" TextColor="Black" />
                             <local:HorizontalScrollView Orientation="Horizontal" x:Name="colorpallet">
                                 <local:HorizontalScrollView.ItemTemplate>
@@ -88,15 +71,15 @@
                     <BoxView BackgroundColor="Gray" HeightRequest="5" />
                     <!--      Color Pallet              -->
                     <StackLayout x:Name="pallet" IsVisible="false">
-                        <Label Text="Color: Black" TextColor="Black"/>
+                        <Label Text="Color: Brown" TextColor="Black"/>
                         <StackLayout Orientation="Horizontal">
-                            <StackLayout BackgroundColor="Blue" x:Name="blackshoe" Padding="1">
+                            <StackLayout  x:Name="blackshoe" Padding="1">
                                 <Image Source="{Binding blackshoe}" Aspect="Fill" WidthRequest="50" HeightRequest="50" />
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="Handle_blackshoe" NumberOfTapsRequired="1" />
                                 </StackLayout.GestureRecognizers>
                             </StackLayout>
-                            <StackLayout x:Name="brownshoe" Padding="1" >
+                            <StackLayout BackgroundColor="Blue" x:Name="brownshoe" Padding="1" >
                                 <Image Source="{Binding brownshoe}" Aspect="Fill" WidthRequest="50" HeightRequest="50" />
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="Handle_brownshoe" NumberOfTapsRequired="1" />
@@ -106,7 +89,7 @@
                         <BoxView BackgroundColor="Gray" HeightRequest="7" />
                     </StackLayout>
                     <!--      end Color Pallet              -->
-                    <Label FontSize="20" Text="Puma Black Shoes For men" TextColor="Black" />
+                    <Label FontSize="20" Text="Puma Brown Shoes For men" TextColor="Black" />
                     <Label FontSize="30" FontAttributes="Bold" Text="₹ 599" TextColor="Black" />
                     <Label Text="Free Delivery in 2 Days" TextColor="Black" FontSize="15" />
                     <BoxView BackgroundColor="Gray" HeightRequest="7" />
@@ -129,7 +112,7 @@
             <StackLayout BackgroundColor="Red" Grid.Row="1" Grid.Column="1">
                 <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="Buy Now" TextColor="Black" />
             </StackLayout>
-            <ActivityIndicator x:Name="activityIndicator" IsRunning="false" VerticalOptions="Center" HorizontalOptions="Center" Color="Blue" />
+           
         </Grid>
     </ContentPage.Content>
 </ContentPage>

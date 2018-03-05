@@ -5,12 +5,10 @@ using Xamarin.Forms;
 
 namespace Ecommerce
 {
-    public partial class ProductDetailPage : ContentPage
+    public partial class ProductBrown : ContentPage
     {
-
-        // public List<ProductModel> Product { get; set; }
         ObservableCollection<ProductColor> Colors;
-        public ProductDetailPage()
+        public ProductBrown()
         {
             InitializeComponent();
             LoadPalletData();
@@ -20,17 +18,17 @@ namespace Ecommerce
         }
         void LoadImageData()
         {
-            this.BindingContext = new 
+            this.BindingContext = new
             {
-                Prodimage1 = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyj7araf3p.jpeg?q=70",
-                Prodimage2 = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyrfdhpfwz.jpeg?q=70",
-                Prodimage3 = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsye8zz86fg.jpeg?q=70",
-                Prodimage4 = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyynexfht6.jpeg?q=70",
-               
+                Prodimage1 = "https://rukminim1.flixcart.com/image/832/832/jd3epow0/shoe/h/3/h/0506-7-dls-brown-original-imaf22zghhmhvvpz.jpeg?q=70",
+                Prodimage2 = "https://rukminim1.flixcart.com/image/832/832/j4eha4w0/shoe/h/3/h/0506-9-dls-brown-original-imaev99tuvgzaypn.jpeg?q=70",
+                Prodimage3 = "https://rukminim1.flixcart.com/image/832/832/jd3epow0/shoe/h/3/h/0506-7-dls-brown-original-imaf22zgxrhezy3w.jpeg?q=70",
+                Prodimage4 = "https://rukminim1.flixcart.com/image/832/832/j4fwpzk0/shoe/h/3/h/0506-6-dls-brown-original-imaev99ucbzxgqvf.jpeg?q=70",
+
                 brownshoe = "https://rukminim1.flixcart.com/image/832/832/jb890nk0/shoe/k/n/5/sokr-brwn-8-deals4you-brown-original-imafymgg9shk6jbq.jpeg?q=70",
                 blackshoe = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyj7araf3p.jpeg?q=70",
 
-                
+
 
             };
         }
@@ -63,7 +61,7 @@ namespace Ecommerce
         {
 
 
-            img1.Source = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyj7araf3p.jpeg?q=70";
+            img1.Source = "https://rukminim1.flixcart.com/image/832/832/jd3epow0/shoe/h/3/h/0506-7-dls-brown-original-imaf22zghhmhvvpz.jpeg?q=70";
             selectimg1.BackgroundColor = Color.Blue;
             selectimg2.BackgroundColor = Color.White;
             selectimg3.BackgroundColor = Color.White;
@@ -74,7 +72,7 @@ namespace Ecommerce
         {
 
 
-            img1.Source = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyrfdhpfwz.jpeg?q=70";
+            img1.Source = "https://rukminim1.flixcart.com/image/832/832/j4eha4w0/shoe/h/3/h/0506-9-dls-brown-original-imaev99tuvgzaypn.jpeg?q=70";
             selectimg2.BackgroundColor = Color.Blue;
             selectimg1.BackgroundColor = Color.White;
             selectimg3.BackgroundColor = Color.White;
@@ -85,7 +83,7 @@ namespace Ecommerce
         {
 
 
-            img1.Source = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsye8zz86fg.jpeg?q=70";
+            img1.Source = "https://rukminim1.flixcart.com/image/832/832/jd3epow0/shoe/h/3/h/0506-7-dls-brown-original-imaf22zgxrhezy3w.jpeg?q=70";
             selectimg3.BackgroundColor = Color.Blue;
             selectimg1.BackgroundColor = Color.White;
             selectimg2.BackgroundColor = Color.White;
@@ -95,7 +93,7 @@ namespace Ecommerce
         }
         void Handle_image4(object sender, System.EventArgs e)
         {
-			img1.Source = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyynexfht6.jpeg?q=70";
+            img1.Source = "https://rukminim1.flixcart.com/image/832/832/j4fwpzk0/shoe/h/3/h/0506-6-dls-brown-original-imaev99ucbzxgqvf.jpeg?q=70";
             selectimg4.BackgroundColor = Color.Blue;
             selectimg1.BackgroundColor = Color.White;
             selectimg2.BackgroundColor = Color.White;
@@ -107,11 +105,9 @@ namespace Ecommerce
 
         void Handle_brownshoe(object sender, System.EventArgs e)
         {
-           
+            
             brownshoe.BackgroundColor = Color.Blue;
             blackshoe.BackgroundColor = Color.White;
-            App.Current.MainPage = new ProductBrown();
-
 
         }
 
@@ -119,6 +115,7 @@ namespace Ecommerce
         {
             blackshoe.BackgroundColor = Color.Blue;
             brownshoe.BackgroundColor = Color.White;
+            App.Current.MainPage = new ProductDetailPage();
 
         }
 
