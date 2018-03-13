@@ -7,19 +7,15 @@ using Ecommerce.Droid.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(HorizontalScrollView), typeof(HorizontalScrollViewRenderer))]
+[assembly: ExportRenderer(typeof(VerticalScrollView), typeof(VerticalScrollViewRenderer))]
 namespace Ecommerce.Droid.Renderer
 {
-    public class HorizontalScrollViewRenderer : ScrollViewRenderer
+    public class VerticalScrollViewRenderer:ScrollViewRenderer
     {
-        
-
+       
         protected override void OnElementChanged(VisualElementChangedEventArgs e)
         {
             base.OnElementChanged(e);
-
-            var element = e.NewElement as HorizontalScrollView;
-            element?.Render();
 
             if (e.OldElement != null || this.Element == null)
                 return;
@@ -32,12 +28,8 @@ namespace Ecommerce.Droid.Renderer
 
         protected void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            
-            if (ChildCount > 0)
-            {
-                GetChildAt(0).HorizontalScrollBarEnabled = false;
-                GetChildAt(0).VerticalScrollBarEnabled = false;
-            }
+            HorizontalScrollBarEnabled = false;
+            VerticalScrollBarEnabled = false;
         }
     }
 }

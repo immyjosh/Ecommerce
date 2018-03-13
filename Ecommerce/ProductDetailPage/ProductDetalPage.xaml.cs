@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
@@ -15,11 +16,13 @@ namespace Ecommerce
             InitializeComponent();
             LoadPalletData();
             LoadImageData();
-            pallet.IsVisible = true;
+            pallet.IsVisible = false;
+
 
         }
-        void LoadImageData()
+        async void LoadImageData()
         {
+            
             this.BindingContext = new 
             {
                 Prodimage1 = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyj7araf3p.jpeg?q=70",
@@ -33,7 +36,13 @@ namespace Ecommerce
                 
 
             };
+            activityIndicator.IsVisible = true;
+            await Task.Delay(2000);
+            activityIndicator.IsVisible = false;
+
         }
+
+
 
 
 
@@ -42,11 +51,15 @@ namespace Ecommerce
             Colors = new ObservableCollection<ProductColor>()
             {
                 new ProductColor() { colorpallet="http://www.solidbackgrounds.com/images/1920x1080/1920x1080-black-solid-color-background.jpg"},
-                new ProductColor() { colorpallet="https://i.pinimg.com/originals/34/a1/13/34a1137416f3b698eb4a9c67a1bc877b.jpg"}
+                new ProductColor() { colorpallet="https://wallpapercave.com/wp/KwEMqSb.jpg"},
+                new ProductColor() { colorpallet="https://knobco.com/sites/default/files/styles/product_full/public/legacy_files/files/BPT-181-4X4.jpg?itok=l5xyBeQH"},
+                new ProductColor() { colorpallet="https://wallpapercave.com/wp/KwEMqSb.jpg"},
+                new ProductColor() { colorpallet="https://knobco.com/sites/default/files/styles/product_full/public/legacy_files/files/BPT-181-4X4.jpg?itok=l5xyBeQH"},
+                new ProductColor() { colorpallet="https://wallpapercave.com/wp/KwEMqSb.jpg"}
 
             };
 
-            //colorpallet.ItemsSource = Colors;
+          //  colorpallet.ItemsSource = Colors;
         }
 
 
@@ -110,7 +123,7 @@ namespace Ecommerce
            
             brownshoe.BackgroundColor = Color.Blue;
             blackshoe.BackgroundColor = Color.White;
-            App.Current.MainPage = new ProductBrown();
+            Application.Current.MainPage = new ProductBrown();
 
 
         }
@@ -120,6 +133,10 @@ namespace Ecommerce
             blackshoe.BackgroundColor = Color.Blue;
             brownshoe.BackgroundColor = Color.White;
 
+        }
+        void OnPanUpdated(object sender, PanUpdatedEventArgs e)
+        {
+            // Handle the pan
         }
 
     }

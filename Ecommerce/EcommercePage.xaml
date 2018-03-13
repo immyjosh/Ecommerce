@@ -1,4 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Ecommerce" x:Class="Ecommerce.EcommercePage">
-	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+        <Label  x:Name="_hourView"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="35" />
+        <Label  Text="h : " FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+        <Label  x:Name="_minuteView" VerticalOptions="Fill" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="35" />
+        <Label  Text="m : " FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+        <Label  x:Name="_secondView" VerticalOptions="Fill" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="35" />
+        <Label  Text="s" FontSize="25" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+        <StackLayout>
+            <Label x:Name="get" FontSize="20"/>
+            <Label x:Name="get1" FontSize="20"/>
+            <Label x:Name="get2" FontSize="20"/>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

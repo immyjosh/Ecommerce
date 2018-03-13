@@ -12,7 +12,6 @@
             </Grid.ColumnDefinitions>
             <ScrollView Grid.Row="0" Grid.ColumnSpan="2">
                 <StackLayout>
-                    <!--https://www.allenedmonds.com/on/demandware.static/-/Library-Sites-AllenEdmondsShared/default/dwec88ada2/images/customPages/model-shoe.png-->
                     <Image x:Name="img1" Source="{Binding Prodimage1}" Aspect="Fill" WidthRequest="250" HeightRequest="250" />
                     <StackLayout Orientation="Horizontal" x:Name="img" Margin="3,0,3,0">
                         <StackLayout BackgroundColor="Blue" x:Name="selectimg1" Padding="2">
@@ -45,7 +44,7 @@
                         </StackLayout>
                         <!--      Color Image              -->
                        <StackLayout HorizontalOptions="CenterAndExpand">
-                            <!-- <Label Text="Colors:" TextColor="Black" />
+                            <Label Text="Colors:" TextColor="Black" />
                             <local:HorizontalScrollView Orientation="Horizontal" x:Name="colorpallet">
                                 <local:HorizontalScrollView.ItemTemplate>
                                     <DataTemplate>
@@ -59,7 +58,7 @@
                                         </ViewCell>
                                     </DataTemplate>
                                 </local:HorizontalScrollView.ItemTemplate>
-                            </local:HorizontalScrollView>-->
+                            </local:HorizontalScrollView>
                             <Image Source="http://red.yellow.blue/img/full/red-icon-blue-yellow-circles-theme-apps-colors.png03.20.164:05:46pm" Aspect="Fill" WidthRequest="30" HeightRequest="30" />
                             <Label Text="2 Colors" TextColor="Blue" />
                             <StackLayout.GestureRecognizers>
