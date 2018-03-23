@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:xfpcv="clr-namespace:XFPagedCarouselView;assembly=XFPagedCarouselView"  xmlns:local="clr-namespace:Ecommerce" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Ecommerce.ProductDetail">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <local:VerticalScrollView Orientation="Vertical" Grid.Row="0">
+            <StackLayout>
+                <!--     Carousel Control           -->
+                <xfpcv:PagedCarouselView WidthRequest="200" HeightRequest="250" x:Name="PagedCarouselView" VerticalOptions="FillAndExpand" PagerStyle="Circle">
+                    <xfpcv:PagedCarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Image Source="{Binding im1}" Aspect="Fill"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </xfpcv:PagedCarouselView.ItemTemplate>
+                </xfpcv:PagedCarouselView>
+              
+                <!--      End Carousel Control          -->
+                <Label x:Name="prodname" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="20" />
+                <Label x:Name="price" TextColor="Black" FontSize="20" />
+                <Label Text="Colors" HorizontalOptions="CenterAndExpand" />
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout x:Name="colorssss" Padding="2">
+                        <Label Text="blue" />
+                    </StackLayout>
+                    <StackLayout x:Name="color1ss" Padding="2">
+                        <Label Text="black" />
+                    </StackLayout>
+                </StackLayout>
+                <Label Text="Quantity" />
+                <Button Text="ADD TO CART" TextColor="White" BackgroundColor="Blue" />
+                <Label Text="Features and benefits" HorizontalOptions="CenterAndExpand" />
+                <Label Text="Details" FontSize="20" TextColor="Black" />
+                <Label Text="Highlights" FontSize="17" FontAttributes="Bold" TextColor="Black" />
+                <Label Text="Color:Black" TextColor="Black" />
+                <Label Text="Outer Material:Leather" TextColor="Black" />
+                <Label Text="Inner Material:Fabric" TextColor="Black" />
+                <Label Text="Guarentee:2 years" TextColor="Black" />
+                <Label Text="Just799 Assured" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+                <Label Text="Details" TextColor="Black" />
+            </StackLayout>
+        </local:VerticalScrollView>
+    </Grid>
+</ContentPage>

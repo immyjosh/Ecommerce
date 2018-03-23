@@ -115,7 +115,6 @@ namespace Ecommerce
         {
             blackshoe.BackgroundColor = Color.Blue;
             brownshoe.BackgroundColor = Color.White;
-            App.Current.MainPage = new ProductDetailPage();
 
         }
 

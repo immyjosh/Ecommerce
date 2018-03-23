@@ -14,31 +14,31 @@
             <local:VerticalScrollView Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="2">
                 <StackLayout>
                     <!--https://www.allenedmonds.com/on/demandware.static/-/Library-Sites-AllenEdmondsShared/default/dwec88ada2/images/customPages/model-shoe.png-->
-                    <Image x:Name="img1" Source="{Binding Prodimage1}" Aspect="Fill" WidthRequest="250" HeightRequest="250" />
+                    <Image x:Name="img1"  Aspect="Fill" WidthRequest="250" HeightRequest="250" />
                     <StackLayout Orientation="Horizontal" x:Name="img" Margin="3,0,3,0">
                         <StackLayout BackgroundColor="Blue" x:Name="selectimg1" Padding="2">
-                            <Image x:Name="prodImage1" Source="{Binding Prodimage1}" Aspect="Fill" WidthRequest="50" HeightRequest="50">
+                            <Image x:Name="prodImage1"  Aspect="Fill" WidthRequest="50" HeightRequest="50">
                             </Image>
                             <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="Handle_image1" />
+                                <TapGestureRecognizer Tapped="Handle_image1"     />
                             </StackLayout.GestureRecognizers>
                         </StackLayout>
                         <StackLayout x:Name="selectimg2" Padding="2">
-                            <Image x:Name="prodImage2" Source="{Binding Prodimage2}" Aspect="Fill" WidthRequest="50" HeightRequest="50">
+                            <Image x:Name="prodImage2"  Aspect="Fill" WidthRequest="50" HeightRequest="50">
                             </Image>
                             <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="Handle_image2" />
+                                <TapGestureRecognizer Tapped="Handle_image2"  />
                             </StackLayout.GestureRecognizers>
                         </StackLayout>
                         <StackLayout x:Name="selectimg3" Padding="2">
-                            <Image x:Name="prodImage3" Source="{Binding Prodimage3}" Aspect="Fill" WidthRequest="50" HeightRequest="50">
+                            <Image x:Name="prodImage3"  Aspect="Fill" WidthRequest="50" HeightRequest="50">
                             </Image>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="Handle_image3" />
                             </StackLayout.GestureRecognizers>
                         </StackLayout>
                         <StackLayout x:Name="selectimg4" Padding="2">
-                            <Image x:Name="prodImage4" Source="{Binding Prodimage4}" Aspect="Fill" WidthRequest="50" HeightRequest="50">
+                            <Image x:Name="prodImage4"  Aspect="Fill" WidthRequest="50" HeightRequest="50">
                             </Image>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="Handle_image4" />
@@ -75,7 +75,7 @@
                         <BoxView BackgroundColor="Gray" HeightRequest="7" />
                     </StackLayout>
                     <!--      end Color Pallet              -->
-                    <Label FontSize="20" Text="Puma Black Shoes For men" TextColor="Black" />
+                    <Label x:Name="desc" FontSize="20"  TextColor="Black" />
                     <Label FontSize="30" FontAttributes="Bold" Text="₹ 799" TextColor="Black" />
                     <Label Text="Free Delivery in 2 Days" TextColor="Black" FontSize="15" />
                     <BoxView BackgroundColor="Gray" HeightRequest="7" />

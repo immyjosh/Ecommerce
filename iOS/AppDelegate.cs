@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using CarouselView.FormsPlugin.iOS;
+using FFImageLoading.Forms.Touch;
+using XFPagedCarouselView.iOS;
 using Foundation;
 using UIKit;
 using Xamarin.Forms;
@@ -14,6 +16,9 @@ namespace Ecommerce.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            CarouselViewRenderer.Init();
+            CachedImageRenderer.Init();
+            Renderers.Init();
            
             LoadApplication(new App());
 

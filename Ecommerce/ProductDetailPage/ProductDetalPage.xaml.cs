@@ -2,24 +2,64 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.Net.Http;
+using Newtonsoft.Json;
 using Xamarin.Forms;
+using System.Windows.Input;
+using System.ComponentModel;
 
 namespace Ecommerce
 {
     public partial class ProductDetailPage : ContentPage
     {
+        private const string Url = "http://thingspeakapi.tk/public/api/customer";
+        private HttpClient _client = new HttpClient();
 
         // public List<ProductModel> Product { get; set; }
         ObservableCollection<ProductColor> Colors;
-        public ProductDetailPage()
+        public ProductDetailPage(string id)
         {
             InitializeComponent();
-            LoadPalletData();
-            LoadImageData();
-            pallet.IsVisible = false;
+            //LoadPalletData();
+            // LoadImageData();
+            GetApi(id);
 
 
         }
+       
+        public async void GetApi(string id)
+        {
+            try
+            {
+
+                var response =
+                    await _client.GetAsync($"{Url}/{id}");
+                var movies = await response.Content.ReadAsStringAsync();
+                var get= JsonConvert.DeserializeObject<ApiModel>(movies);
+
+
+                img1.Source = get.images;
+                prodImage1.Source = get.images;
+                prodImage2.Source = get.image1;
+                prodImage3.Source = get.image2;
+                prodImage4.Source = get.image3;
+
+
+                activityIndicator.IsVisible = true;
+                await Task.Delay(2000);
+                activityIndicator.IsVisible = false;
+
+
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+        }
+
+       
+
         async void LoadImageData()
         {
             
@@ -72,33 +112,61 @@ namespace Ecommerce
 
         }
 
-        void Handle_image1(object sender, System.EventArgs e)
+        async void Get(string id){
+            var client = new HttpClient();
+            var response =
+                await client.GetStringAsync("http://thingspeakapi.tk/public/api/customer/"+id);
+            var movies = JsonConvert.DeserializeObject<ApiModel>(response);
+
+
+            img1.Source = movies.images;
+
+        }
+
+       
+
+        async   void Handle_image1(object id, System.EventArgs e)
         {
 
+            // (BindingContext as ProductDetailViewModel).Tap_Image(id.ToString());
 
-            img1.Source = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyj7araf3p.jpeg?q=70";
+            Get(id.ToString());
             selectimg1.BackgroundColor = Color.Blue;
             selectimg2.BackgroundColor = Color.White;
             selectimg3.BackgroundColor = Color.White;
             selectimg4.BackgroundColor = Color.White;
 
         }
-        void Handle_image2(object sender, System.EventArgs e)
+        async  void Handle_image2(object id, System.EventArgs e)
         {
 
 
-            img1.Source = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyrfdhpfwz.jpeg?q=70";
+            var client = new HttpClient();
+            var response =
+                await client.GetStringAsync("http://thingspeakapi.tk/public/api/customer/"+id);
+            var movies = JsonConvert.DeserializeObject<ApiModel>(response);
+            id = img1.Source;
+
+
+            img1.Source = movies.image1;
             selectimg2.BackgroundColor = Color.Blue;
             selectimg1.BackgroundColor = Color.White;
             selectimg3.BackgroundColor = Color.White;
             selectimg4.BackgroundColor = Color.White;
 
         }
-        void Handle_image3(object sender, System.EventArgs e)
+        async  void Handle_image3(object sender, System.EventArgs e)
         {
 
 
-            img1.Source = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsye8zz86fg.jpeg?q=70";
+            var client = new HttpClient();
+            var response =
+                await client.GetStringAsync("http://thingspeakapi.tk/public/api/customer/22");
+            var movies = JsonConvert.DeserializeObject<ApiModel>(response);
+
+
+
+            img1.Source = movies.image2;
             selectimg3.BackgroundColor = Color.Blue;
             selectimg1.BackgroundColor = Color.White;
             selectimg2.BackgroundColor = Color.White;
@@ -106,9 +174,16 @@ namespace Ecommerce
 
 
         }
-        void Handle_image4(object sender, System.EventArgs e)
+        async void Handle_image4(object sender, System.EventArgs e)
         {
-			img1.Source = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyynexfht6.jpeg?q=70";
+            var client = new HttpClient();
+            var response =
+                await client.GetStringAsync("http://thingspeakapi.tk/public/api/customer/22");
+            var movies = Newtonsoft.Json.JsonConvert.DeserializeObject<ApiModel>(response);
+
+
+
+            img1.Source = movies.image3;
             selectimg4.BackgroundColor = Color.Blue;
             selectimg1.BackgroundColor = Color.White;
             selectimg2.BackgroundColor = Color.White;
@@ -138,6 +213,7 @@ namespace Ecommerce
         {
             // Handle the pan
         }
+
 
     }
 }

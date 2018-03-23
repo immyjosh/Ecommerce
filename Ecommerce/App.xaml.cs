@@ -8,7 +8,7 @@ namespace Ecommerce
         {
             InitializeComponent();
 
-            MainPage = new MasterPage();
+            this.MainPage = new MasterPage() ;
         }
 
         protected override void OnStart()

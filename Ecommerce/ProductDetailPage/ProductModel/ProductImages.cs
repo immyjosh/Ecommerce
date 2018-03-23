@@ -7,5 +7,7 @@ namespace Ecommerce
         public string Prodimage2 { get; set; }
         public string Prodimage3 { get; set; }
         public string Prodimage4 { get; set; }
+        public float id { get; set; }
+        public string url { get; set; }
     }
 }

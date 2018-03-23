@@ -7,6 +7,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using CarouselView.FormsPlugin.Android;
+using FFImageLoading.Forms.Droid;
 
 namespace Ecommerce.Droid
 {
@@ -21,6 +23,9 @@ namespace Ecommerce.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            CarouselViewRenderer.Init();
+            CachedImageRenderer.Init(enableFastRenderer: true);
+
 
             LoadApplication(new App());
         }
