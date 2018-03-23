@@ -1,8 +1,9 @@
 ﻿using System;
 namespace Ecommerce
 {
-    public class datetime
+    public class datetimes
     {
-        public datetime dt { get; set; }
+        public DateTime dt { get; set; }
+        public TimeSpan ts { get; set; }
     }
 }

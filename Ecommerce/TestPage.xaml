@@ -1,5 +1,32 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Ecommerce.TestPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:Ecommerce" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Ecommerce.TestPage">
     <ContentPage.Content>
+        <ListView x:Name="postsListView" SeparatorVisibility="None" ItemSelected="Handle_ItemSelected" HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" x:Name="text" Source="{Binding images}" Aspect="Fill"/>
+                            <Label Grid.Row="1" Text="{Binding firstname}"/>
+                            <Label Grid.Row="2" Text="{Binding lastname}"/>
+                            <Label Grid.Row="3" Text="{Binding phone}"/>
+                            <Label Grid.Row="4" Text="{Binding email}"/>
+                            <Label Grid.Row="5" Text="{Binding address}"/>
+                            <Label Grid.Row="6" Text="{Binding state}"/>
+                        </Grid>
+                             
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

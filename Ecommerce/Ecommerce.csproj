@@ -54,10 +54,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApiPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="ProductDetailPage\ProductDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -101,9 +97,6 @@
     <Compile Include="MyPage.xaml.cs">
       <DependentUpon>MyPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ApiPage.xaml.cs">
-      <DependentUpon>ApiPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\IndicatorItemView.cs" />
     <Compile Include="ApiModel.cs" />
     <Compile Include="ProductDetailPage\ProductDetail.xaml.cs">
@@ -113,7 +106,6 @@
       <DependentUpon>Apiprod.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\ProductService.cs" />
-    <Compile Include="ProductDetailPage\ProductDetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
