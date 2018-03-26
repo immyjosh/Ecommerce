@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:xfpcv="clr-namespace:XFPagedCarouselView;assembly=XFPagedCarouselView"  xmlns:local="clr-namespace:Ecommerce" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Ecommerce.ProductDetail">
-    <Grid>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:xfpcv="clr-namespace:XFPagedCarouselView;assembly=XFPagedCarouselView" xmlns:local="clr-namespace:Ecommerce" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Ecommerce.ProductDetail">
+    <Grid RowSpacing="0" ColumnSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <local:VerticalScrollView Orientation="Vertical" Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <local:VerticalScrollView x:Name="scroll"  Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="2">
             <StackLayout>
                 <!--     Carousel Control           -->
-                <xfpcv:PagedCarouselView WidthRequest="200" HeightRequest="250" x:Name="PagedCarouselView" VerticalOptions="FillAndExpand" PagerStyle="Circle">
+                <xfpcv:PagedCarouselView WidthRequest="200" HeightRequest="250" x:Name="PagedCarouselView" VerticalOptions="FillAndExpand" PagerStyle="Circle" ShowPager="true">
                     <xfpcv:PagedCarouselView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
-                                <Image Source="{Binding im1}" Aspect="Fill"/>
+                                <Image Source="{Binding im1}" Aspect="Fill" />
                             </StackLayout>
                         </DataTemplate>
                     </xfpcv:PagedCarouselView.ItemTemplate>
                 </xfpcv:PagedCarouselView>
-              
                 <!--      End Carousel Control          -->
-                <Label x:Name="prodname" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="20" />
+                <Label x:Name="prodname" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold" FontSize="30" />
                 <Label x:Name="price" TextColor="Black" FontSize="20" />
                 <Label Text="Colors" HorizontalOptions="CenterAndExpand" />
                 <StackLayout Orientation="Horizontal">
@@ -30,7 +34,6 @@
                     </StackLayout>
                 </StackLayout>
                 <Label Text="Quantity" />
-                <Button Text="ADD TO CART" TextColor="White" BackgroundColor="Blue" />
                 <Label Text="Features and benefits" HorizontalOptions="CenterAndExpand" />
                 <Label Text="Details" FontSize="20" TextColor="Black" />
                 <Label Text="Highlights" FontSize="17" FontAttributes="Bold" TextColor="Black" />
@@ -56,5 +59,11 @@
                 <Label Text="Details" TextColor="Black" />
             </StackLayout>
         </local:VerticalScrollView>
+         <StackLayout x:Name="carttap" BackgroundColor="Gray" Grid.Row="1" Grid.Column="0">
+                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="Add to Cart" TextColor="White" />
+            </StackLayout>
+            <StackLayout x:Name="buytap" BackgroundColor="Red" Grid.Row="1" Grid.Column="1">
+                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="Buy Now" TextColor="Black" />
+            </StackLayout>
     </Grid>
 </ContentPage>

@@ -152,7 +152,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer\HorizontalScrollViewRenderer.cs" />
     <Compile Include="Renderer\VerticalScrollViewRenderer.cs" />
-    <Compile Include="Renderer\IndicatorItemViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

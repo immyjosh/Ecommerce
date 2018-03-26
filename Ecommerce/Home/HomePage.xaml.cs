@@ -10,7 +10,7 @@ namespace Ecommerce
 {
     public partial class HomePage : ContentPage
     {
-        private const string Url = "http://thingspeakapi.tk/public/api/customer";
+        private const string Url = "http://thingspeakapi.tk/public/api/products";
         private HttpClient _client = new HttpClient();
         public HomePage()
         {
@@ -27,41 +27,30 @@ namespace Ecommerce
             //};
             GetData();
         }
-        public async void GetApi()
+
+        void Handle_Refreshing(object sender, System.EventArgs e)
         {
-            try
-            {
-
-                var response =
-                    await _client.GetAsync(Url);
-                var movies = await response.Content.ReadAsStringAsync();
-                var get = JsonConvert.DeserializeObject<List<ApiModel>>(movies);
-                listview.ItemsSource = get;
-
-
-               
-
-            }
-            catch (Exception e)
-            {
-
-                throw;
-            }
+            listview.IsRefreshing = false;
         }
 
+       
         public async void GetData()
         {
             try
             {
-                HttpClient client = new HttpClient();
-                var response = await client.GetStringAsync("http://thingspeakapi.tk/public/api/customers");
-                var movies = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ApiModel>>(response);
-                listview.ItemsSource = movies;
+                listview.IsRefreshing = true;
+                var response = await _client.GetStringAsync(Url);
+                var products = JsonConvert.DeserializeObject<List<ApiModel>>(response);
+                listview.ItemsSource = products;
 
             }
             catch (Exception e)
             {
-                throw;
+                throw ;
+            }
+            finally
+            {
+                listview.IsRefreshing = false;
             }
         }
 

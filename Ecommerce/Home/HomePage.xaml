@@ -12,26 +12,36 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-                <ListView  x:Name="listview" Grid.Row="0" Grid.ColumnSpan="2" HasUnevenRows="true"  ItemSelected="Handle_ItemSelected">
-                    <ListView.ItemTemplate> 
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout>
-                                    <Frame>
-                                        <ffimageloading:CachedImage Source="{Binding images}" Aspect="Fill" />
-                                        <!--<Frame.GestureRecognizers>
+            <ListView x:Name="listview" 
+                      Grid.Row="0" 
+                      Grid.ColumnSpan="2" 
+                      HasUnevenRows="true" 
+                      IsPullToRefreshEnabled="true"
+                      Refreshing="Handle_Refreshing" 
+                      ItemSelected="Handle_ItemSelected">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Frame>
+                                    <ffimageloading:CachedImage Source="{Binding image}" Aspect="Fill" />
+                                    <!--<Frame.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="Handle_image1" />
                                         </Frame.GestureRecognizers>-->
-                                    </Frame>
-                                    <StackLayout>
-                                        <Label Text="{Binding firstname}" TextColor="Black" FontSize="20" />
-                                        <Label Text="{Binding lastname}" TextColor="Black" FontSize="20" />
+                                </Frame>
+                                <StackLayout>
+                                    <Label Text="{Binding productname}" TextColor="Black" FontSize="20" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="₹" TextColor="Black" FontSize="20" />
+                                        <Label Text="{Binding price}" TextColor="Black" FontSize="20" />
                                     </StackLayout>
                                 </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

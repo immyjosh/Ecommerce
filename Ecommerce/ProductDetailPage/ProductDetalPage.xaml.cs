@@ -12,7 +12,7 @@ namespace Ecommerce
 {
     public partial class ProductDetailPage : ContentPage
     {
-        private const string Url = "http://thingspeakapi.tk/public/api/customer";
+        private const string Url = "http://thingspeakapi.tk/public/api/product";
         private HttpClient _client = new HttpClient();
 
         // public List<ProductModel> Product { get; set; }
@@ -26,7 +26,7 @@ namespace Ecommerce
 
 
         }
-       
+
         public async void GetApi(string id)
         {
             try
@@ -35,11 +35,11 @@ namespace Ecommerce
                 var response =
                     await _client.GetAsync($"{Url}/{id}");
                 var movies = await response.Content.ReadAsStringAsync();
-                var get= JsonConvert.DeserializeObject<ApiModel>(movies);
+                var get = JsonConvert.DeserializeObject<ApiModel>(movies);
 
 
-                img1.Source = get.images;
-                prodImage1.Source = get.images;
+                img1.Source = get.image;
+                prodImage1.Source = get.image;
                 prodImage2.Source = get.image1;
                 prodImage3.Source = get.image2;
                 prodImage4.Source = get.image3;
@@ -58,22 +58,22 @@ namespace Ecommerce
             }
         }
 
-       
+
 
         async void LoadImageData()
         {
-            
-            this.BindingContext = new 
+
+            this.BindingContext = new
             {
                 Prodimage1 = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyj7araf3p.jpeg?q=70",
                 Prodimage2 = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyrfdhpfwz.jpeg?q=70",
                 Prodimage3 = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsye8zz86fg.jpeg?q=70",
                 Prodimage4 = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyynexfht6.jpeg?q=70",
-               
+
                 brownshoe = "https://rukminim1.flixcart.com/image/832/832/jb890nk0/shoe/k/n/5/sokr-brwn-8-deals4you-brown-original-imafymgg9shk6jbq.jpeg?q=70",
                 blackshoe = "https://rukminim1.flixcart.com/image/832/832/shoe/w/r/y/black-pipf00009-provogue-8-original-imaemzsyj7araf3p.jpeg?q=70",
 
-                
+
 
             };
             activityIndicator.IsVisible = true;
@@ -99,7 +99,7 @@ namespace Ecommerce
 
             };
 
-          //  colorpallet.ItemsSource = Colors;
+            //  colorpallet.ItemsSource = Colors;
         }
 
 
@@ -112,20 +112,21 @@ namespace Ecommerce
 
         }
 
-        async void Get(string id){
+        async void Get(string id)
+        {
             var client = new HttpClient();
             var response =
-                await client.GetStringAsync("http://thingspeakapi.tk/public/api/customer/"+id);
+                await client.GetStringAsync("http://thingspeakapi.tk/public/api/product/" + id);
             var movies = JsonConvert.DeserializeObject<ApiModel>(response);
 
 
-            img1.Source = movies.images;
+            img1.Source = movies.image;
 
         }
 
-       
 
-        async   void Handle_image1(object id, System.EventArgs e)
+
+        async void Handle_image1(object id, System.EventArgs e)
         {
 
             // (BindingContext as ProductDetailViewModel).Tap_Image(id.ToString());
@@ -137,13 +138,13 @@ namespace Ecommerce
             selectimg4.BackgroundColor = Color.White;
 
         }
-        async  void Handle_image2(object id, System.EventArgs e)
+        async void Handle_image2(object id, System.EventArgs e)
         {
 
 
             var client = new HttpClient();
             var response =
-                await client.GetStringAsync("http://thingspeakapi.tk/public/api/customer/"+id);
+                await client.GetStringAsync("http://thingspeakapi.tk/public/api/product/" + id);
             var movies = JsonConvert.DeserializeObject<ApiModel>(response);
             id = img1.Source;
 
@@ -155,13 +156,13 @@ namespace Ecommerce
             selectimg4.BackgroundColor = Color.White;
 
         }
-        async  void Handle_image3(object sender, System.EventArgs e)
+        async void Handle_image3(object sender, System.EventArgs e)
         {
 
 
             var client = new HttpClient();
             var response =
-                await client.GetStringAsync("http://thingspeakapi.tk/public/api/customer/22");
+                await client.GetStringAsync("http://thingspeakapi.tk/public/api/product/22");
             var movies = JsonConvert.DeserializeObject<ApiModel>(response);
 
 
@@ -178,7 +179,7 @@ namespace Ecommerce
         {
             var client = new HttpClient();
             var response =
-                await client.GetStringAsync("http://thingspeakapi.tk/public/api/customer/22");
+                await client.GetStringAsync("http://thingspeakapi.tk/public/api/product/22");
             var movies = Newtonsoft.Json.JsonConvert.DeserializeObject<ApiModel>(response);
 
 
@@ -195,7 +196,7 @@ namespace Ecommerce
 
         void Handle_brownshoe(object sender, System.EventArgs e)
         {
-           
+
             brownshoe.BackgroundColor = Color.Blue;
             blackshoe.BackgroundColor = Color.White;
             Application.Current.MainPage = new ProductBrown();
@@ -209,10 +210,7 @@ namespace Ecommerce
             brownshoe.BackgroundColor = Color.White;
 
         }
-        void OnPanUpdated(object sender, PanUpdatedEventArgs e)
-        {
-            // Handle the pan
-        }
+
 
 
     }

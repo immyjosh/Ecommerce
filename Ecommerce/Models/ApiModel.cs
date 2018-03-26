@@ -10,9 +10,9 @@ namespace Ecommerce
     {
         public string id { get; set; }
 
-        public string firstname { get; set; }
+        public string productname { get; set; }
 
-        public string lastname { get; set; }
+        public string price { get; set; }
 
         public string phone { get; set; }
 
@@ -22,7 +22,7 @@ namespace Ecommerce
 
         public string state { get; set; }
 
-        public string images { get; set; }
+        public string image { get; set; }
 
         public string image1 { get; set; }
 
